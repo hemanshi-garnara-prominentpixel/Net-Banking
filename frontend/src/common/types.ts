@@ -20,3 +20,9 @@ export interface TransactionData {
   amount: number;
   remark: string;
 }
+
+export interface TransferData {
+  account_number: string;
+  amount: number;
+  remark: string;
+}

@@ -5,6 +5,7 @@ import { userRouter } from "./routes/user.router";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { transactionRouter } from "./routes/transaction.router";
+import { cronJob } from "./cron-job/transaction-history";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/", (req: Request, res: Response) => {
   res.status(404).send("Invalid URL");
 });
 
+cronJob;
 app.listen(port, () => {
   console.log(`your server is running on port ${port}`);
 });

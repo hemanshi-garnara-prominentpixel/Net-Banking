@@ -105,6 +105,7 @@ export const userLogout = (req: Request, res: Response) => {
     return res.status(500).json({ error: "Server error" });
   }
 };
+
 export const dashboard = (req: IAuthUser, res: Response) => {
   const email = req.user?.email;
   res.status(200).json({ message: `Welcome ${email}` });

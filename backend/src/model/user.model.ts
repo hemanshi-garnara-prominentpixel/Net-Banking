@@ -27,10 +27,6 @@ export const User = sequelize.define("User", {
     defaultValue: 1000,
     allowNull: false,
   },
-  transaction_ids: {
-    type: DataTypes.ARRAY(DataTypes.UUID),
-    defaultValue: [],
-  },
   role: {
     type: DataTypes.STRING,
     defaultValue: "user",

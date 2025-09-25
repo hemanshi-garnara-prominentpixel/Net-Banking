@@ -5,6 +5,11 @@ import { User } from "./user.model";
 User.hasMany(Transaction, { foreignKey: "user_id" });
 Transaction.belongsTo(User, { foreignKey: "user_id" });
 
+Transaction.belongsTo(User, {
+  foreignKey: "related_user_id",
+  as: "relatedUser",
+});
+
 export { User, Transaction };
 
 export const syncDatabase = async () => {
@@ -12,7 +17,7 @@ export const syncDatabase = async () => {
     await sequelize.authenticate();
     console.log("DB connected sucessfully");
 
-    await sequelize.sync();
+    await sequelize.sync({ alter: true });
     console.log("All models were synchronized successfully");
   } catch (error) {
     console.log("[Error syncDataBase]", error);

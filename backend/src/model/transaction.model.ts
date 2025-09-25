@@ -11,14 +11,12 @@ export const Transaction = sequelize.define("Transaction", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  sender_id: {
-    type: DataTypes.UUID,
-  },
-  receiver_id: {
-    type: DataTypes.UUID,
+  related_user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
   },
   transaction_type: {
-    type: DataTypes.ENUM("credit", "debit", "transfer"),
+    type: DataTypes.ENUM("credit", "debit", "transfer", "received"),
     allowNull: false,
   },
   amount: {
