@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/db.connnection";
-import { User } from "./user.model";
 
 export const Transaction = sequelize.define("Transaction", {
   transaction_id: {

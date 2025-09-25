@@ -4,6 +4,7 @@ import { syncDatabase } from "./model/associations";
 import { userRouter } from "./routes/user.router";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { transactionRouter } from "./routes/transaction.router";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 app.use("/users", userRouter);
+app.use("/transactions", transactionRouter);
 app.use("/", (req: Request, res: Response) => {
   res.status(404).send("Invalid URL");
 });

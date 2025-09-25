@@ -6,6 +6,17 @@ export interface LoginData {
 export interface IAuthContext {
   authenticated: boolean;
   loading: boolean;
-  userData: { id: number; name: string; email: string } | null;
+  userData: {
+    id: number;
+    username: string;
+    email: string;
+    account_number: string;
+    balance: number;
+  } | null;
   refreshAuth: () => void;
+}
+
+export interface TransactionData {
+  amount: number;
+  remark: string;
 }

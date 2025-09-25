@@ -7,13 +7,21 @@ import {
 } from "react-router-dom";
 import Login from "../pages/Login";
 import UserDashboard from "../pages/UserDashboard";
+import ProtectedRoute from "./ProtectedRoute";
 
 const NetBankingRoutes = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<UserDashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <UserDashboard />
+            </ProtectedRoute>
+          }
+        />
       </Route>
     )
   );

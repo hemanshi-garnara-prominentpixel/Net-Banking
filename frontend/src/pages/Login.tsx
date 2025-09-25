@@ -69,27 +69,34 @@ const Login: React.FC = () => {
   };
   return (
     <>
-      <form onSubmit={handleLoginData}>
-        <h2>Login</h2>
-        <label>Username </label>
+      <form
+        className="bg-gray-100 flex flex-col items-center mt-20 p-6  rounded-lg shadow-sm w-100 mx-auto"
+        onSubmit={handleLoginData}
+      >
+        <h2 className="text-2xl font-semibold">Login</h2>
+        <label className="w-full">Username </label>
         <input
+          className="w-full p-2 border rounded "
           type="text"
           name="username"
           value={loginData.username}
           onChange={handleChange}
         />
         <br />
-        <br />
-        <label>Password </label>
+        <label className="w-full">Password </label>
         <input
+          className="w-full p-2 border rounded mt-1"
           type="password"
           name="password"
           value={loginData.password}
           onChange={handleChange}
         />
         <br />
-        <br />
-        <button type="submit" disabled={loading}>
+        <button
+          className="w-full py-2 border rounded bg-gray-800 text-white hover:bg-gray-900"
+          type="submit"
+          disabled={loading}
+        >
           {loading ? "Logging in..." : "Login"}
         </button>
       </form>

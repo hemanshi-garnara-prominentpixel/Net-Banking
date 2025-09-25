@@ -30,6 +30,7 @@ const AuthProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
       );
       setAuthenticated(true);
       setUserData(currentUser.data);
+      console.log(userData);
     } catch {
       setAuthenticated(false);
       setUserData(null);

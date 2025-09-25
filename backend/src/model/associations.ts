@@ -19,6 +19,4 @@ export const syncDatabase = async () => {
   }
 };
 
-
-
-console.log("in association table");
+console.log("in association file");
